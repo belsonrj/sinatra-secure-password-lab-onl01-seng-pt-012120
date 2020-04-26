@@ -18,15 +18,11 @@ class ApplicationController < Sinatra::Base
 
   post "/signup" do
     #your code here
-    if params[:username].empty?
-      redirect to '/failure'
-    end
-    if params[:password].empty?
-      redirect to '/failure'
-    end
-    else
-      erb :login
-    end
+		if user.save
+			redirect '/login'
+		else
+			redirect '/failure'
+		end
   end
 
   get '/account' do
