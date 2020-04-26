@@ -24,6 +24,8 @@ class ApplicationController < Sinatra::Base
     if params[:password].empty?
       redirect to '/failure'
     end
+    else
+      erb :
   end
 
   get '/account' do
